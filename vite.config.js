@@ -13,10 +13,6 @@ export default defineConfig({
     },
     host: true,
     strictPort: true,
-    port: 5000,
-    hmr: {
-      protocol: "wss",
-      host: "chatapp-vrblnscxna-uw.a.run.app",
-    }
+    port: 5000
   }
 })
