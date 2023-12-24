@@ -19,7 +19,7 @@ const Profile = ({ setUser }) => {
         const img = e.target.files[0]
 
         const params = {
-            Bucket: 'noodelzchatappbucket',
+            Bucket: import.meta.env.VITE_BUCKET_NAME,
             Key: img.name,
             Body: img
         }
