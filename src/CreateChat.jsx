@@ -79,7 +79,7 @@ const CreateChat = ({ sendChat, addMembers }) => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        fetch(`/api/check-same-users-in-convo/${JSON.stringify(requestMembers)}`)
+        fetch(`${import.meta.env.VITE_SERVER_URL}/api/check-same-users-in-convo/${JSON.stringify(requestMembers)}`)
             .then(response => response.json())
             .then(data => setConvos(data))
             .catch(err => console.log(err))
@@ -149,7 +149,7 @@ const CreateChat = ({ sendChat, addMembers }) => {
                         convoPicture: data.Location
                     }
 
-                    fetch('/api/create-convo', {
+                    fetch(import.meta.env.VITE_SERVER_URL + '/api/create-convo', {
                         method: 'POST',
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify(body)

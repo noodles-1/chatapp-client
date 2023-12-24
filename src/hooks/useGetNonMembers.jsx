@@ -6,7 +6,7 @@ const useGetNonMembers = (convoId) => {
     const [isConnected, setConnected] = useState(false)
 
     useEffect(() => {
-        fetch(`/api/get-non-members/${convoId}`)
+        fetch(`${import.meta.env.VITE_SERVER_URL}/api/get-non-members/${convoId}`)
             .then(response => response.json())
             .then(data => {
                 setNonMembers(data)

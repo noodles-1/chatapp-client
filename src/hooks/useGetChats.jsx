@@ -12,7 +12,7 @@ const useGetChats = (convoId) => {
     }, [])
 
     useEffect(() => {
-        fetch(`/api/get-chats/${convoId}/0`)
+        fetch(`${import.meta.env.VITE_SERVER_URL}/api/get-chats/${convoId}/0`)
             .then(response => response.json())
             .then(data => {
                 setChats(data.convoChats)
@@ -27,7 +27,7 @@ const useGetChats = (convoId) => {
 
     const loadNextChats = () => {
         if (next)
-            fetch(`/api/get-chats/${convoId}/${next}`)
+            fetch(`${import.meta.env.VITE_SERVER_URL}/api/get-chats/${convoId}/${next}`)
                 .then(response => response.json())
                 .then(data => {
                     setChats(prev => [...prev, ...data.convoChats])

@@ -13,7 +13,7 @@ const LeavePopup = ({ leavePopup, setLeavePopup, sendChat }) => {
             convoId: leavePopup
         }
 
-        fetch('/api/leave-convo', {
+        fetch(import.meta.env.VITE_SERVER_URL + '/api/leave-convo', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(body)

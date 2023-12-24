@@ -31,7 +31,7 @@ const InfoChat = ({ setNamePopup, setMemberPopup, setLeavePopup, sendChat }) => 
                     convoPicture: data.Location
                 }
 
-                fetch(`/api/update-convo-picture`, {
+                fetch(`${import.meta.env.VITE_SERVER_URL}/api/update-convo-picture`, {
                     method: 'POST',
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(body)

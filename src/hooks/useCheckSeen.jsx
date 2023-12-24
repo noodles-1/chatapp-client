@@ -13,7 +13,7 @@ const useCheckSeen = (userId, chatId) => {
     }, [])
 
     useEffect(() => {
-        fetch(`/api/get-seen/${userId}/${chatId}`)
+        fetch(`${import.meta.env.VITE_SERVER_URL}/api/get-seen/${userId}/${chatId}`)
             .then(response => response.json())
             .then(data => {
                 setChat(data)

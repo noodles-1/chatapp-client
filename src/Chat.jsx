@@ -73,7 +73,7 @@ const Chat = ({ sendChat }) => {
                 chatId: chatId,
                 viewerId: user._id.valueOf()
             }
-            fetch(`/api/chat-seen/`, {
+            fetch(`${import.meta.env.VITE_SERVER_URL}/api/chat-seen/`, {
                 method: 'POST',
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(body)

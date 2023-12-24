@@ -6,7 +6,7 @@ const useCheckInConvo = (convoId, userId) => {
     const [isConnected, setConnected] = useState(false)
 
     useEffect(() => {
-        fetch(`/api/check-in-convo/${convoId}/${userId}`)
+        fetch(`${import.meta.env.VITE_SERVER_URL}/api/check-in-convo/${convoId}/${userId}`)
             .then(response => response.json())
             .then(data => {
                 setResult(data)

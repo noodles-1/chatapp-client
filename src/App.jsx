@@ -29,7 +29,7 @@ function App() {
   }, [])
 
   const handleUser = (data) => {
-    fetch(`/api/get-user/${data._id}`)
+    fetch(`${import.meta.env.VITE_SERVER_URL}/api/get-user/${data._id}`)
       .then(response => response.json())
       .then(responseData => {
         setUser(responseData)

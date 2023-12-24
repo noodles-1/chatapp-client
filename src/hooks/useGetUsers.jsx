@@ -6,7 +6,7 @@ const useGetUsers = (userId) => {
     const [isConnected, setConnected] = useState(false)
 
     useEffect(() => {
-        fetch(`/api/get-users/${userId}`)
+        fetch(`${import.meta.env.VITE_SERVER_URL}/api/get-users/${userId}`)
             .then(response => response.json())
             .then(data => {
                 setUsers(data)

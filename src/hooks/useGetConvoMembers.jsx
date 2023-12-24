@@ -12,7 +12,7 @@ const useGetConvoMembers = (convoId) => {
     }, [])
 
     useEffect(() => {
-        fetch(`/api/get-convo-members/${convoId}`)
+        fetch(`${import.meta.env.VITE_SERVER_URL}/api/get-convo-members/${convoId}`)
             .then(response => response.json())
             .then(data => {
                 setMembers(data)

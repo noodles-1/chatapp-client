@@ -34,7 +34,7 @@ const Home = () => {
         if (search) {
             const encode = encodeURIComponent(search.trim())
 
-            fetch(`/api/get-search-chat-list/${user._id.valueOf()}/${encode}`)
+            fetch(`${import.meta.env.VITE_SERVER_URL}/api/get-search-chat-list/${user._id.valueOf()}/${encode}`)
                 .then(response => response.json())
                 .then(data => {
                     data.sort((a, b) => {
@@ -102,7 +102,7 @@ const Home = () => {
             category: category
         }
 
-        await fetch(`/api/send-message`, {
+        await fetch(`${import.meta.env.VITE_SERVER_URL}/api/send-message`, {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(body)
@@ -116,7 +116,7 @@ const Home = () => {
             members: members
         }
 
-        fetch('/api/add-members-convo', {
+        fetch(import.meta.env.VITE_SERVER_URL + '/api/add-members-convo', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(body)

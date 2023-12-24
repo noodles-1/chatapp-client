@@ -24,7 +24,7 @@ const ChatNamePopup = ({ namePopup, setNamePopup, sendChat }) => {
     const handleSend = () => {
         if (isEnabled) {
             const body = { convoId: namePopup.convoId, newName: trimmedName }
-            fetch('/api/set-convo-name', {
+            fetch(import.meta.env.VITE_SERVER_URL + '/api/set-convo-name', {
                 method: 'POST',
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(body)

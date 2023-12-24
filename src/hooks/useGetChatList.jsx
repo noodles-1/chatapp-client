@@ -13,7 +13,7 @@ const useGetChatList = (userId) => {
     }, [])
 
     useEffect(() => {
-        fetch(`/api/get-chat-list/${userId}`)
+        fetch(`${import.meta.env.VITE_SERVER_URL}/api/get-chat-list/${userId}`)
             .then(response => response.json())
             .then(data => {
                 data.sort((a, b) => {

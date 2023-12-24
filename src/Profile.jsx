@@ -33,7 +33,7 @@ const Profile = ({ setUser }) => {
                     profilePicture: data.Location
                 }
 
-                fetch(`/api/update-profile-picture`, {
+                fetch(`${import.meta.env.VITE_SERVER_URL}/api/update-profile-picture`, {
                     method: 'POST',
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(body)

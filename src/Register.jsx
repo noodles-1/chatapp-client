@@ -22,7 +22,7 @@ const Register = () => {
 
     useEffect(() => {
         if (isValidName && userName.length > 0) {
-            fetch(`/api/check-username-existing/${userName}`)
+            fetch(`${import.meta.env.VITE_SERVER_URL}/api/check-username-existing/${userName}`)
                 .then(response => response.json())
                 .then(data => setUserExisting(data.length > 0))
                 .catch(err => console.log(err))
@@ -69,7 +69,7 @@ const Register = () => {
                         profilePicture: data.Location
                     }
 
-                    fetch('/api/register', {
+                    fetch(import.meta.env.VITE_SERVER_URL + '/api/register', {
                         method: 'POST',
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify(body)

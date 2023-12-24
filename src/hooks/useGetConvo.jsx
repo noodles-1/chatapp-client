@@ -12,7 +12,7 @@ const useGetConvo = (convoId) => {
     }, [])
 
     useEffect(() => {
-        fetch(`/api/get-convo/${convoId}`)
+        fetch(`${import.meta.env.VITE_SERVER_URL}/api/get-convo/${convoId}`)
             .then(response => response.json())
             .then(data => {
                 setConvo(data)
